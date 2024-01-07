@@ -1,5 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { UserLogin } from "./UserLogin";
+import { Product } from "./Product";
 
 @Entity({name: 'users'})
 export class User{
@@ -51,6 +52,8 @@ export class User{
 
     @Column({default: false})
     is_blocked: boolean;
-    
+
+    @OneToMany(() => Product, product => product.sellers_id)
+    products: Product[];
     
 }

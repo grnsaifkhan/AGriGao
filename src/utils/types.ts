@@ -40,3 +40,22 @@ export type LoginUserParams = {
 export type LoginHistoryParams = {
     user_id: number;
 }
+
+
+export type CreateProductParams = {
+    name: string;
+    price: number;
+    stock_amount: number;
+    regional_provenance: string;
+    arrival_date: Date;
+    sellers_id: number;
+}
+
+
+export type CreateProductGroupParam = {
+    is_product_group_available: boolean;
+    product_id: number[];
+    is_product_published: boolean;
+    discount: number;
+    quantity: number;
+}
